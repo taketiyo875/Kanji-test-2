@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff5e7">
+  <meta name="description" content="かわいい猫と一緒に、常用漢字を自分のペースで学ぼう。">
+  <title>漢字検定｜ねことコツコツ漢字学習</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="漢字検定 ホーム">
+        <span class="brand-paw" aria-hidden="true">🐾</span>
+        <span>漢字検定</span>
+      </a>
+      <p class="header-note">ねこと一緒に、コツコツ学ぼう</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home-panel" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">まいにち、ちょっとずつ</p>
+        <h1 id="page-title">漢字検定</h1>
+        <p class="hero-text">自分のペースで、<br>コツコツ学ぼう。</p>
+        <span class="encourage">いっしょにがんばるにゃ 🐾</span>
+      </div>
+      <div class="mascot-wrap">
+        <span class="spark spark-one" aria-hidden="true">✦</span>
+        <img class="mascot" src="cat-mascot.jpeg" alt="木の上に座っている、まんまるな茶トラ猫">
+        <span class="mascot-caption">きょうも一歩ずつ！</span>
+      </div>
+      <span class="hero-paw paw-one" aria-hidden="true">🐾</span>
+      <span class="hero-star star-one" aria-hidden="true">✦</span>
+    </section>
+
+    <section class="menu-section" aria-labelledby="study-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">LET'S STUDY</p>
+          <h2 id="study-title">なにから はじめる？</h2>
+        </div>
+        <span class="heading-doodle" aria-hidden="true">✿</span>
+      </div>
+      <div class="menu-grid">
+        <button class="menu-card card-peach" type="button" data-mode="reading">
+          <span class="card-illustration" aria-hidden="true"><span class="mini-book">あ<br><small>い</small></span></span>
+          <span class="menu-title">読み問題</span>
+          <span class="menu-description">漢字の読み方を答えよう</span>
+          <span class="menu-arrow" aria-hidden="true">›</span>
+        </button>
+        <button class="menu-card card-yellow" type="button" data-mode="writing">
+          <span class="card-illustration" aria-hidden="true"><span class="mini-paper">漢<span>✎</span></span></span>
+          <span class="menu-title">書き取り問題</span>
+          <span class="menu-description">読みを見て漢字にしよう</span>
+          <span class="menu-arrow" aria-hidden="true">›</span>
+        </button>
+        <button class="menu-card card-blue" type="button" data-mode="browse">
+          <span class="card-illustration" aria-hidden="true"><span class="mini-books">▰<br>▰</span></span>
+          <span class="menu-title">漢字一覧</span>
+          <span class="menu-description">漢字や読みを検索しよう</span>
+          <span class="menu-arrow" aria-hidden="true">›</span>
+        </button>
+        <a class="menu-card card-lilac countdown-card" href="#daily-note">
+          <span class="card-illustration" aria-hidden="true"><span class="mini-clock">◷</span></span>
+          <span class="menu-title">学習のヒント</span>
+          <span class="menu-description">あせらず、少しずつ！</span>
+          <span class="menu-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel quiz-panel" id="quiz-panel" aria-labelledby="quiz-title" hidden>
+      <div class="section-heading">
+        <div><p class="section-kicker">CHALLENGE</p><h2 id="quiz-title">漢字クイズ</h2></div>
+        <button class="text-button" id="back-home" type="button">← メニューへ</button>
+      </div>
+      <p class="status-message" id="quiz-status" role="status">漢字データを読み込んでいます。</p>
+      <div class="question-card" id="question-card" hidden>
+        <p class="question-label" id="question-label">この漢字の読みは？</p>
+        <p class="question-character" id="question-character">漢</p>
+        <form id="answer-form">
+          <label class="sr-only" for="answer-input">答え</label>
+          <input id="answer-input" name="answer" type="text" autocomplete="off" placeholder="ここに答えを入力" required>
+          <button class="primary-button" type="submit">答え合わせ</button>
+        </form>
+        <p class="feedback" id="answer-feedback" aria-live="polite"></p>
+        <button class="secondary-button" id="next-question" type="button" hidden>次の問題へ</button>
+      </div>
+    </section>
+
+    <section class="panel browse-panel" id="browse-panel" aria-labelledby="browse-title" hidden>
+      <div class="section-heading">
+        <div><p class="section-kicker">KANJI LIST</p><h2 id="browse-title">漢字一覧</h2></div>
+        <button class="text-button" id="browse-back-home" type="button">← メニューへ</button>
+      </div>
+      <label class="search-label" for="kanji-search">漢字・読みを検索</label>
+      <input id="kanji-search" type="search" placeholder="例：海、うみ">
+      <p class="status-message" id="browse-status" role="status">漢字データを読み込んでいます。</p>
+      <ul class="kanji-list" id="kanji-list"></ul>
+    </section>
+
+    <section class="daily-note" id="daily-note" aria-label="学習のヒント">
+      <span class="note-paw" aria-hidden="true">🐾</span>
+      <div><h2>今日も少しずつ。</h2><p>できることを、ひとつずつ増やしていこう！</p></div>
+      <span class="note-cat" aria-hidden="true">ฅ^•ﻌ•^ฅ</span>
+    </section>
+    <p class="data-note">※ 漢字データの読みや例は、登録されている内容に基づいて表示します。</p>
+  </main>
+
+  <footer class="site-footer"><p>🐾 漢字検定・学習用サイト 🐾</p></footer>
+</body>
+</html>
